@@ -1,0 +1,12 @@
+
+<h1>Listss</h1>
+<%= link_to 'Add List', new_board_list_path %>
+<hr />
+<h2><%= @lists.length <= 0 ? "No List" : "" %></h2> 
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.name, list %>
+    </li>
+  <% end %>
+</ul>

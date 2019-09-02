@@ -1,0 +1,15 @@
+<h1><%= @user.full_name %></h1>
+<hr />
+<h2>Lists</h2>
+<ul>
+  <% @user.lists.each do |list| %>
+    <li>
+      <%= link_to list.name, list %>
+    </li>
+  <% end %>
+</ul>
+<br />
+<br />
+<br />
+<%= link_to 'Delete User', @user, method: :delete, class: "ui red button inverted" %>
+ 

@@ -1,0 +1,8 @@
+<h1><%= @board.name %></h1>
+<hr />
+<br />
+<%= link_to 'Lists', board_lits_path(@board), class: "ui primary button inverted" %>
+<br />
+<br />
+<br />
+<%= link_to "Delete List", @board, method: :delete, class: "ui red button inverted" %>

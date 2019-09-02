@@ -1,0 +1,10 @@
+<h1>Add Task</h1>
+<%= form_with(model: [@board, @list], local: true, class: "ui form" ) do |f| %>
+  <%= f.label :user %>
+  <%= f.select :user_id, @users.collect { |u| [u.full_name, u.id] } %>
+  <br />
+  <%= f.label :role %>
+  <%= f.select :role, ['Advanced', 'Specialized', 'Anyone'] %>
+  <br />
+  <%= f.submit nil, class: "ui green button inverted" %>
+<% end %>

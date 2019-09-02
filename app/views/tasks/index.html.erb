@@ -1,0 +1,34 @@
+<h1><%= @board.name %>: lists</h1>
+<%= link_to 'Add List', new_board_list_path(@board) %>
+<hr />
+
+<h2>Specialized</h2>
+<ul>
+  <% @Specializeds.each do |specialized| %>
+    <li>
+      <%= specialized.user.full_name %>
+      <br />
+      <%= link_to 'Remove', board_list_path(@board, specialized), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+<h2>Advanced</h2>
+<ul>
+  <% @Advanceds.each do |advanced| %>
+    <li>
+      <%= advanced.user.full_name %>
+      <br />
+      <%= link_to 'Remove', board_list_path(@board, advanced), method: :delete %>
+    </li>
+ <% end %>
+</ul>
+<h2>Anyone</h2>
+<ul>
+  <% @anyones.each do |anyone| %>
+    <li>
+      <%= anyone.user.full_name %>
+      <br />
+      <%= link_to 'Remove', course_enrollment_path(@course, anyone), method: :delete %>
+   </li>
+ <% end %>
+</ul>
